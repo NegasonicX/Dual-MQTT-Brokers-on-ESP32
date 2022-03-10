@@ -582,8 +582,8 @@ void app_main(void)
     // MQTT START
     mqtt_app_start();
 
-    xTaskCreate(MQTT_TASK1, "Main_Program", 4096, NULL, configMAX_PRIORITIES, NULL);
-    xTaskCreate(MQTT_TASK2, "AASA_Logs", 4096, NULL, configMAX_PRIORITIES-2, NULL);
+    xTaskCreate(MQTT_TASK1, "First_MQTT", 4096, NULL, configMAX_PRIORITIES, NULL);
+    xTaskCreate(MQTT_TASK2, "Second_MQTT", 4096, NULL, configMAX_PRIORITIES-2, NULL);
     xTaskCreate(reconnection, "reconnection", 1024*4, NULL, configMAX_PRIORITIES-1, NULL);      //++ Create the Task to check reconnection and interent
 
 }
